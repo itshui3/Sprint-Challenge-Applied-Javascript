@@ -61,6 +61,18 @@ function MakeCarousel() {
     }
   });
 
+  leftBtn.addEventListener("click", (e) => {
+    if (counter > 0) {
+      imgArr[counter].classList.toggle("img-focus");
+      counter--;
+      imgArr[counter].classList.toggle("img-focus");
+    } else {
+      imgArr[counter].classList.toggle("img-focus");
+      counter = imgArr.length-1;
+      imgArr[counter].classList.toggle("img-focus");
+    }
+  });
+
   return carousel;
 }
 
