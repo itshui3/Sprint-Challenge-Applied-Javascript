@@ -46,25 +46,25 @@ function MakeCard(obj) {
   return card;
 }
 
-// axios.get("https://lambda-times-backend.herokuapp.com/articles")
-// .then( response => {
-//   console.log(response.data.articles);
-//   console.log(response.data.articles.bootstrap);
-//   // response.data.articles.bootstrap.forEach( elem => {
-//   //   console.log(elem);
-//   // }); // this works, 'nuff said
-//   const articles = response.data.articles;
-//   const articleKeys = Object.keys(articles);
-//   console.log(articleKeys);
-//   articleKeys.forEach( (elem) => {
-//     console.log(articles[elem]);
-//     articles[elem].forEach( (elem) => {
-//       document.querySelector(".cards-container").append(MakeCard(elem));
-//     });
-//   });
+axios.get("https://lambda-times-backend.herokuapp.com/articles")
+.then( response => {
+  console.log(response.data.articles);
+  console.log(response.data.articles.bootstrap);
+  // response.data.articles.bootstrap.forEach( elem => {
+  //   console.log(elem);
+  // }); // this works, 'nuff said
+  const articles = response.data.articles;
+  const articleKeys = Object.keys(articles);
+  console.log(articleKeys);
+  articleKeys.forEach( (elem) => {
+    console.log(articles[elem]);
+    articles[elem].forEach( (elem) => {
+      document.querySelector(".cards-container").append(MakeCard(elem));
+    });
+  });
 
-// })
-//   .catch( error => {
-//     console.log(`Something wrong occurred: ${error}`);
-//   });
+})
+  .catch( error => {
+    console.log(`Something wrong occurred: ${error}`);
+  });
 

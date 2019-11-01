@@ -47,6 +47,7 @@ function MakeCarousel() {
   trees.src = "./assets/carousel/trees.jpeg";
   turnTable.src = "./assets/carousel/turntable.jpeg";
   mountains.classList.add("img-focus");
+
   let counter = 0;
   const imgArr = [mountains, computer, trees, turnTable];
   rightBtn.addEventListener("click", (e) => {
@@ -72,6 +73,12 @@ function MakeCarousel() {
       imgArr[counter].classList.toggle("img-focus");
     }
   });
+
+  // rightBtn.addEventListener("click", (e) => {
+  //   imgArr.forEach( (elem) => {
+  //     elem.style.transform = 'translateX(-100%)';
+  //   });
+  // }); // trying a different way
 
   return carousel;
 }
