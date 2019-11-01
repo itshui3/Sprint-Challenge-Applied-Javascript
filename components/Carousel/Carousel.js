@@ -50,12 +50,14 @@ function MakeCarousel() {
   let counter = 0;
   const imgArr = [mountains, computer, trees, turnTable];
   rightBtn.addEventListener("click", (e) => {
-    if (counter < imgArr.length) {
+    if (counter < imgArr.length - 1) {
       imgArr[counter].classList.toggle("img-focus");
       counter++;
       imgArr[counter].classList.toggle("img-focus");
     } else {
+      imgArr[counter].classList.toggle("img-focus");
       counter = 0;
+      imgArr[counter].classList.toggle("img-focus");
     }
   });
 
