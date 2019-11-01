@@ -28,5 +28,38 @@ function MakeCarousel() {
   const turnTable = document.createElement("img");
   const rightBtn = document.createElement("div");
 
-  
+  carousel.append(leftBtn);
+  carousel.append(mountains);
+  carousel.append(computer);
+  carousel.append(trees);
+  carousel.append(turnTable);
+  carousel.append(rightBtn);
+
+  carousel.classList.add("carousel");
+  leftBtn.classList.add("left-button");
+  rightBtn.classList.add("right-button");
+
+  leftBtn.textContent = " < "; // replace with graphemica
+  rightBtn.textContent = " > ";
+
+  mountains.src = "./assets/carousel/mountains.jpeg";
+  computer.src = "./assets/carousel/computer.jpeg";
+  trees.src = "./assets/carousel/trees.jpeg";
+  turnTable.src = "./assets/carousel/turntable.jpeg";
+  mountains.classList.add("img-focus");
+  let counter = 0;
+  const imgArr = [mountains, computer, trees, turnTable];
+  rightBtn.addEventListener("click", (e) => {
+    if (counter < imgArr.length) {
+      imgArr[counter].classList.toggle("img-focus");
+      counter++;
+      imgArr[counter].classList.toggle("img-focus");
+    } else {
+      counter = 0;
+    }
+  });
+
+  return carousel;
 }
+
+document.querySelector(".carousel-container").append(MakeCarousel());
