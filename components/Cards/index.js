@@ -43,6 +43,15 @@ function MakeCard(obj) {
   img.src = obj.authorPhoto;
   span.textContent = `By ${obj.authorName}`;
 
+  const topics = ["javascript", "bootstrap", "technology", "jquery", "node.js"];
+  topics.forEach( elem => {
+    if (headline.textContent.indexOf(elem) > -1) {
+      card.setAttribute(`data-${elem}`, true);
+    } else {
+      card.setAttribute(`data-${elem}`, false);
+    }
+  });
+
   return card;
 }
 
