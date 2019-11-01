@@ -17,3 +17,16 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+
+function MakeCarousel() {
+  const carousel = document.createElement("div");
+  const leftBtn = document.createElement("div");
+  const mountains = document.createElement("img");
+  const computer = document.createElement("img");
+  const trees = document.createElement("img");
+  const turnTable = document.createElement("img");
+  const rightBtn = document.createElement("div");
+
+  
+}
